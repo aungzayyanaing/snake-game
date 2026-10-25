@@ -16,6 +16,7 @@ python3 snake.py
 Eat the red apple to grow and score a point. Every apple makes the
 snake a little faster. Hitting a wall or your own tail ends the game.
 Your best score is saved in `highscore.txt`.
+The snake is red on Saturday and Sunday, blue on Monday to Friday.
 
 ## Files
 

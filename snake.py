@@ -5,12 +5,15 @@ How to play:
     python3 snake.py
     Arrow keys or WASD to move, P to pause, R to restart after game over.
     Eat the red apple to grow and score. Don't hit the walls or yourself!
+The snake's colour follows the day you play: red on Saturday and
+Sunday, blue on Monday to Friday.
 
 Controls are the whole game: one apple at a time, the snake gets
 a little faster with every apple, and your best score is saved
 in highscore.txt next to this file.
 """
 
+import datetime
 import random
 import tkinter as tk
 from pathlib import Path
@@ -25,10 +28,22 @@ MIN_DELAY = 70
 
 BG = "#0f1a12"
 GRID = "#16241b"
-SNAKE_HEAD = "#4ade80"
-SNAKE_BODY = "#22c55e"
 APPLE = "#ef4444"
 TEXT = "#e7f5e9"
+
+
+def theme_colors(weekday: int) -> tuple[str, str]:
+    """Snake colours by day of the week (Monday=0, Sunday=6).
+
+    Weekends (Saturday, Sunday) are red, weekdays (Monday-Friday)
+    are blue, so the snake you see depends on the day you play.
+    """
+    if weekday >= 5:
+        return "#ef4444", "#dc2626"
+    return "#3b82f6", "#2563eb"
+
+
+SNAKE_HEAD, SNAKE_BODY = theme_colors(datetime.date.today().weekday())
 
 
 def load_highscore() -> int:
