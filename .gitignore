@@ -1,0 +1,6 @@
+# Runtime-generated high score file (created by snake.py on first game over)
+highscore.txt
+
+# Python bytecode
+__pycache__/
+*.py[cod]
