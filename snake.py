@@ -138,6 +138,9 @@ class SnakeGame:
             self.apple = self.spawn_apple()
             if self.apple is None:
                 self.alive = False
+                if self.score > self.highscore:
+                    self.highscore = self.score
+                    save_highscore(self.highscore)
         else:
             self.snake.pop()
 
