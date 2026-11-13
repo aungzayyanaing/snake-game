@@ -125,7 +125,7 @@ class SnakeGame:
         dx, dy = self.direction
         head = (hx + dx, hy + dy)
         x, y = head
-        if not (0 <= x < COLS and 0 <= y < ROWS) or head in self.snake:
+        if not (0 <= x < COLS and 0 <= y < ROWS) or head in self.snake[:-1]:
             self.alive = False
             if self.score > self.highscore:
                 self.highscore = self.score
