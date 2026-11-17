@@ -24,6 +24,13 @@ This is a single-window game with no start menu, levels, sound, or multiplayer �
 
 Python 3 with `tkinter` (part of Python's standard library). No other packages are needed.
 
+On some Linux distributions `tkinter` is not installed with Python by default. If running the game gives `ModuleNotFoundError: No module named 'tkinter'`, install it with your distribution's package manager — for example, `sudo apt install python3-tk` on Debian or Ubuntu — then run `python3 snake.py` again.
+
+## Troubleshooting
+
+- If the game will not start and Python reports that `tkinter` is missing, install it as described under Requirements above; the game itself needs no other package.
+- To reset your best score, delete `highscore.txt` next to `snake.py`. The game treats a missing file as a best score of 0, and creates a new file the next time you set a best score.
+
 ## Files
 
 - `snake.py` — the whole game, one file
